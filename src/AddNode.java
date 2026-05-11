@@ -4,12 +4,11 @@ public class AddNode extends Node {
     }
 
     @Override
-    public void changeData() {
+    public boolean changeData() {
         int res = 0;
         for(var node : pointed) res += node.value;
-        if(res == value) return;
+        if(res == value) return false;
         value = res;
-        System.out.println("Passing node " + id + ":" + res);
-        dirty = true;
+        return true;
     }
 }

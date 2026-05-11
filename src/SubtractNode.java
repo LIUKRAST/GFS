@@ -4,11 +4,10 @@ public class SubtractNode extends Node {
     }
 
     @Override
-    public void changeData() {
+    public boolean changeData() {
         int res = pointed[0].value - pointed[1].value;
-        if(res == value) return;
+        if(res == value) return false;
         value = res;
-        System.out.println("Passing node " + id + ":" + res);
-        dirty = true;
+        return true;
     }
 }
